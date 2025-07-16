@@ -1,18 +1,18 @@
 # SCRIPTS
 Comandos para obtener la filogenia de la familia Riodinidae
-##DESCARGAR SECUENCIAS
+## DESCARGAR SECUENCIAS
 
 esearch -db nucleotide -query "Riodinidae[Organism] AND COI" | efetch -format fasta > Riodinidae_COI.fasta
 
-##ALINEAMIENTO
+## ALINEAMIENTO
 
 ./muscle3.8.31_i86linux64 -in Riodinidae_COI.fasta -out muscle_Riodinidae_COI.fasta -maxiters 1 -diags
 
-##CARGAR IQtree
+## CARGAR IQtree
 
 module load iqtree/2.2.2.6
 
-##FILOGENIA
+## FILOGENIA
 
 #!/bin/bash
 
@@ -31,7 +31,7 @@ module load iqtree/2.2.2.6
 
 iqtree2 -s muscle_Riodinidae_COI.fasta
 
-##DESCARGAR ARCHIVO A DESKTOP PERSONAL
+## DESCARGAR ARCHIVO A DESKTOP PERSONAL
 
 Desde otra pestaña nueva de Git Bash fuera de Hoffman2
 
@@ -39,7 +39,7 @@ cd Desktop
 
 scp dechavez@hoffman2.idre.ucla.edu:/u/scratch/d/dechavez/Bioinformatica-PUCE/RediseBio/MikaelaPa/TrabajoFinal/muscle_Riodinidae_COI.fasta.treefile
 
-##ATOM
+## ATOM
 
 Open file
 Find 
@@ -48,10 +48,10 @@ Seleccionamos .*
 Usamos regular expresions
 
 
-##REEMPLAZAR CODIGO NCBI CON GENERO Y ESPECIE
+## REEMPLAZAR CODIGO NCBI CON GENERO Y ESPECIE
 
 USAR PROGRAMA ChangeIDs.sh
 
-##FIGTREE
+## FIGTREE
 
 Open archivo .tree (En este caso butterfly.tree)
